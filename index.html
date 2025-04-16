@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Amira Clock</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        html, body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfbfb, #ebedee, #dbe6f6, #f5dcdc, #ffdede);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientFlow {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .mode {
+            margin: 10px;
+        }
+
+        #display {
+            font-size: 72px;
+            font-weight: bold;
+            margin: 60px 0;
+            color: #222;
+        }
+
+        button {
+            margin: 4px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ffffffcc;
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #fff;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        #timerControls, #stopwatchControls {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amira Digital Clock</h1>
+    <div class="mode">
+        <button id="clockMode">Clock</button>
+        <button id="timerMode">Timer</button>
+        <button id="stopwatchMode">Stopwatch</button>
+    </div>
+
+    <div id="display">--:--:--</div>
+
+    <div id="timerControls" style="display: none;">
+        <input type="number" id="timerMinutes" placeholder="Menit"> 
+        <button id="startTimer">Mulai Timer</button>
+        <button id="resetTimer">Reset Timer</button>
+    </div>
+
+    <div id="stopwatchControls" style="display: none;">
+        <button id="startStopwatch">Mulai</button>
+        <button id="stopStopwatch">Berhenti</button>
+        <button id="resetStopwatch">Reset</button>
+    </div>
+</body>
+</html>
