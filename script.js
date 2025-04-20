@@ -9,7 +9,7 @@ let mode = 'clock';
             const utc = now.getTime() + now.getTimezoneOffset() * 60000;
             const gmt7 = new Date(utc + 7 * 3600000);
             const time = gmt7.toLocaleTimeString();
-            $('#display').text(time);
+            document.getElementById('display').textContent = time;
         }
 
         function startTimer() {
